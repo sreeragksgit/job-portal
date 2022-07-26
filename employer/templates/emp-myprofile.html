@@ -1,0 +1,31 @@
+
+{%extends 'base1.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+<div class="card" style="width: 18rem;">
+  <img src="{{request.user.employers.logo.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{request.user.employers.company_name}}</h5>
+    <p class="card-text"></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i>Bio:</i> {{request.user.employers.bio}}</li>
+    <li class="list-group-item"><i>Services:</i>{{request.user.employers.services}}</li>
+    <li class="list-group-item"><i>Location:</i>{{request.user.employers.location}}</li>
+  </ul>
+     <div>
+         <a href="{%url 'e-update' request.user.employers.id%}"  class="btn btn-warning">Edit</a>
+     </div>
+</div>
+
+
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+{%endblock%}

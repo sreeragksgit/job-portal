@@ -1,0 +1,20 @@
+
+{%extends 'base1.html'%}
+{%block body_block%}
+<div class="container">
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4"  style="color:white">
+         <i>title:</i> {{job.job_title}}<br>
+          <i>posted_by:</i> {{job.posted_by}}<br>
+         <i>description:</i> {{job.job_discription}}<br>
+         <i>salary:</i> {{job.salary}}<br>
+          <i>last-date:</i>{{job.last_date}}<br>
+          <i>location</i>{{job.location}}<br>
+          <i>qulification:</i>{{job.qulification}}<br>
+
+      </div>
+      <div class="col-4"></div>
+  </div>
+</div>
+{%endblock%}

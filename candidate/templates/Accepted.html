@@ -1,0 +1,13 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+   {%for appl in application%}
+      <div style="color:white;">
+          Title:{{appl.job.job_title}}
+     designation: {{appl.job.role}}
+      status:{{appl.status}}
+      applide date:{{appl.date}}
+      </div>
+      <hr>
+     {%endfor%}
+
+{%endblock%}

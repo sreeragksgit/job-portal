@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    {%if request.user.is_candidate%}
+       <link rel="stylesheet" href="{%static 'css/style3.css'%}">
+    {%else%}
+       <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    {%endif%}
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">jobPortal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          {%if request.user.is_candidate%}
+          <a class="nav-link active" aria-current="page" href="{%url 'cand-home'%}">Home</a>
+          {%else%}
+          <a class="nav-link active" aria-current="page" href="{%url 'e-home'%}">Home</a>
+          {%endif%}
+        </li>
+        <li class="nav-item">
+          {%if request.user.is_candidate%}
+          <a class="nav-link" href="{%url 'cand-addprofile'%}">add-profile</a>
+          {%else%}
+          <a class="nav-link" href="{%url 'emp-profile'%}">add-profile</a>
+          {%endif%}
+        </li>
+
+          <li class="nav-item">
+            {%if request.user.is_candidate%}
+          <a class="nav-link" href="{%url 'cand-joblist' %}">view job</a>
+            {%else%}
+            <a class="nav-link" href="{%url 'emp-listjob' %}">list job</a>
+            {%endif%}
+        </li>
+
+          <li class="nav-item">
+            {%if request.user.is_candidate%}
+          <a class="nav-link" href="{%url 'my_applied'%}">Appled job</a>
+            {%else%}
+            <a class="nav-link" href="{%url 'emp-addjob' %}">create job</a>
+            {%endif%}
+        </li>
+
+
+      </ul>
+
+     {%if request.user.is_candidate%}
+
+      <a href="{%url 'cand-detail'%}" class="btn btn-outline-success">my-profile</a>
+      {%else%}
+      <a href="{%url 'emp-detail'%}" class="btn btn-outline-success">my-profile</a>
+      {%endif%}
+      <a href="{%url 'signout'%}" class="btn btn-outline-danger">logout</a>
+
+
+
+
+      </form>
+    </div>
+  </div>
+</nav>
+
+</body>
+<div class="condainer">
+    {%block body_block%}
+    {%endblock%}
+</div>
+</html>

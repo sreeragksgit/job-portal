@@ -1,0 +1,36 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+           <div class="card" style="width: 18rem;">
+  <img src="{{applic.applicant.candidates.profile_pic.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{applic.applicant}}</h5>
+
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">age:{{applic.applicant.candidate.age}}</li>
+    <li class="list-group-item">email:{{applic.applicant.email}}</li>
+    <li class="list-group-item">phone:{{applic.applicant.phone}}</li>
+      <li class="list-group-item">qualifications:{{applic.applicant.qualification}}</li>
+      <li class="list-group-item">skill:{{applic.applicant.skill}}</li>
+      <li class="list-group-item">cv:{{applic.applicant.cv}}</li>
+      <li class="list-group-item">cv: <a href="{{applic.applicant.candidates.cv.url}}">{{applic.applicant.candidates.cv}}</a>    </li>
+
+  </ul>
+
+    <a href="{%url 'ststus' applic.id%}" class="card-link">accept</a>
+    <a href="{%url 'a-status' applic.id%}" class="card-link">reject</a>
+
+</div>
+
+
+
+
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}

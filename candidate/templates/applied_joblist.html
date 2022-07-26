@@ -1,0 +1,42 @@
+
+{%extends 'base1.html'%}
+{%block body_block%}
+<div class="container">
+  <div class="row" style="color:white">
+    {%for appl in applied%}
+
+      <div class="col-4"></div>
+      <div class="col-8 mt-4 mb-2">
+          <h1>APPLIED JOBS </h1>
+          <table>
+              <tr>
+                   <th>title</th>
+              <th>designation</th>
+              <th>status</th>
+              <th>applide date</th>
+              </tr>
+             <tr>
+                 <td>{{appl.job.job_title}}</td>
+                 <td>{{appl.job.role}}</td>
+                 <td>{{appl.status}}</td>
+                 <td>{{appl.date}}</td>
+             </tr>
+
+
+          </table>
+<!--          Title:{{appl.job.job_title}}-->
+<!--     designation: {{appl.job.role}}-->
+<!--      status:{{appl.status}}-->
+<!--      applide date:{{appl.date}}-->
+      </div>
+
+      <div class="col-4"></div>
+      <hr>
+
+
+    {%endfor%}
+
+  </div>
+</div>
+
+{%endblock%}

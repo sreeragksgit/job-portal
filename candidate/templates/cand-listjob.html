@@ -1,0 +1,58 @@
+{%extends 'base1.html'%}
+{%block body_block%}
+
+    <div class="row">
+      <div class="col-4"></div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <h1>all jobs</h1>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+
+
+        {%for job in jobs%}
+
+
+<!--            <h1 style="color:white">{{request.user}}</h1>-->
+
+<!--<div class="row">-->
+<!--    <div class="col-4"></div>-->
+<!--    <div class="col-4">-->
+<!--         <div class="card text-dark bg-white mb-3" style="max-width: 18rem color:white;">-->
+<!--                  <div class="card-header bg-black"  style="color:white; "><i>title:</i>{{job.job_title}}</div>-->
+<!--                  <div class="card-body">-->
+<!--                    <h5 class="card-title"><i>role:</i>{{job.role}}</h5>-->
+<!--                    <p class="card-text"><i>description:</i>{{job.discription}}</p>-->
+<!--                      <p class="card-text"><i>posted_by:</i>{{job.posted_by.username}}</p>-->
+<!--                  </div>-->
+<!--                 <div class="card-footer bg-transparent border-success"><a href="{%url 'cand-detailsjob' job.id %}" class="btn btn-success">details</a></div>-->
+
+
+<!--    </div>-->
+<!--    <div class="col-4"></div>-->
+
+
+<!--</div>-->
+
+            <div class="card text-dark bg-white mb-3" style="max-width: 18rem color:white;">
+                  <div class="card-header bg-black"  style="color:white; "><i>title:</i>{{job.job_title}}</div>
+                  <div class="card-body">
+                    <h5 class="card-title"><i>role:</i>{{job.role}}</h5>
+                    <p class="card-text"><i>description:</i>{{job.discription}}</p>
+                      <p class="card-text"><i>posted_by:</i>{{job.posted_by.username}}</p>
+                  </div>
+                 <div class="card-footer bg-transparent border-success"><a href="{%url 'cand-detailsjob' job.id %}" class="btn btn-success">details</a></div>
+
+
+        <div class="col-4"></div>
+
+         {%endfor%}
+
+       <div class="col-4"></div>
+    </div>
+
+{%endblock%}

@@ -1,0 +1,33 @@
+
+{%extends 'base1.html'%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+
+            <div class="card border-success mb-3" style="max-width: 18rem color:white;">
+                  <div class="card-header bg-transparent border-success">{{job.title}}</div>
+                  <div class="card-body text-success">
+                        <h5 class="card-title">{{job.role}}</h5>
+                        <p class="card-text">{{job.job_discription}}</p>
+                       <p class="card-text">{{job.experience}}</p>
+                      <p class="card-text">{{job.location}}</p>
+                      <p class="card-text">{{job.salary}}</p>
+                      <p class="card-text">{{job.last_date}}</p>
+                      <p class="card-text">{{job.qulification}}</p>
+
+                  </div>
+                {%if status%}
+                    <a href="#"></a>
+                {%else%}
+                  <div class="card-footer bg-transparent border-success"><a href="{%url 'apply-now' job.id %}">apply now</a></div>
+                {%endif%}
+            </div>
+
+
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+{%endblock%}
